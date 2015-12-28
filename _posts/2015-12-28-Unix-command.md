@@ -11,12 +11,15 @@ description: Clever tricks for project management, system maintainance, team wor
 #### Project management
 
 * Search a specific statement in project files
-`grep -rn "Search item" . `  
+
+&emsp;&emsp;`grep -rn "Search item" . `  
 
 * Find a specific file and print its path
-`find . -name "file-name" -print` 
+
+&emsp;&emsp;`find . -name "file-name" -print` 
 
 #### System maintainance
 
 * Print log information when new logs added.
-`tail -f /var/log/auth.log `
+
+&emsp;&emsp;`tail -f /var/log/auth.log `
