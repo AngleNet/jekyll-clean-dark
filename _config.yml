@@ -12,11 +12,11 @@ baseurl: '/'
 
 social:
   github: AngleNet 
-  stackoverflow: ''
-  linkedin: ''
-  instagram: ''
-  lastfm: ''
-  rss: feed.xml
+  #stackoverflow: ''
+  #linkedin: ''
+  #instagram: ''
+  #lastfm: ''
+  #rss: feed.xml
 
 # Google Analytics key, leave blank to ignore
 google_analytics_key:
