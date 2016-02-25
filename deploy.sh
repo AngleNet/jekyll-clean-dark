@@ -1,4 +1,4 @@
-
+#!/bin/bash
 #jekyll build --incremental
 #cp -rf ./_site/* ../AngleNet.github.io/
 #cd ../AngleNet.github.io

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 ---
 layout: post
 title: OS<sub>1</sub>--Warm Up 
@@ -13,7 +11,7 @@ description: This series of blogs are class notes when I take the <b>CMU</b> <a 
 When I was an undergraduate student, I always check this course status to see some staffs. But never learn it for entirety. I know I have to do this these days. Still challenges, but funny.  
 
 * [Computing building blocks](http://www.cs.umd.edu/class/sum2003/cmsc311/Notes)
-* [Language Notes](https://www3.ntu.edu.sg/home/ehchua/programming/)
+* [Language Notes]( https://www3.ntu.edu.sg/home/ehchua/programming/)
 
 ###2. Recommanding programming styles
 
@@ -40,4 +38,3 @@ When I was an undergraduate student, I always check this course status to see so
 * About design
 	
 	When works on a solution, think hard to come up with a few feasible approaches and then do tradeoff varifications. Practice the best approach.
-   

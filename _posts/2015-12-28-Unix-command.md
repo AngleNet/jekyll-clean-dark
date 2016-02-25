@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 ---
 layout: post
 title: Useful Unix Commands
@@ -84,4 +82,3 @@ gcc -o libhello.so -shared hello.o
 
 
 
->>>>>>> ac516901ffc96cafde3d830e66e91e143db27faa
