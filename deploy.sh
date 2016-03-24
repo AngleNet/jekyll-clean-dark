@@ -6,8 +6,8 @@
 #git commit -m "Commit new blog"
 #git push
 
-jekyll clean
-jekyll build 
+rm -rf _site
+jekyll 
 cd ../AngleNet.github.io
 git rm -rf *
 mv ../blog/_site/* .
