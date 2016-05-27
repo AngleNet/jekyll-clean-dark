@@ -7,7 +7,7 @@
 #git push
 
 rm -rf _site
-jekyll 
+jekyll build
 cd ../AngleNet.github.io
 git rm -rf *
 mv ../blog/_site/* .
