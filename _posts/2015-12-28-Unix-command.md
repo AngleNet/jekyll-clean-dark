@@ -40,6 +40,10 @@ description: Clever tricks for project management, system maintainance, team wor
 * Logout a specific user forcely
 
 	`pkill -KILL -u username`
+ 
+* Show Tcp listening ports
+	
+    `netstat -anp`
 
 * Split large files into smaller pieces
 
