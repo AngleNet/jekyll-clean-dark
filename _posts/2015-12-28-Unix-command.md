@@ -41,6 +41,10 @@ description: Clever tricks for project management, system maintainance, team wor
 
 	`pkill -KILL -u username`
 
+* Split large files into smaller pieces
+
+    `split [-l -b] filename prefix`
+
 #### Vim tips
 
 * Tab management
@@ -60,6 +64,15 @@ description: Clever tricks for project management, system maintainance, team wor
 #### Bash scripts
 
 *	[The advanced bash-scripting guide](http://www.tldp.org/LDP/abs/html/)
+
+* `for` statements
+
+    `for((i=0; i<1000; i++)); do echo $i; done`
+    `for i in {1..5}; do echo $i; done`
+
+* Array
+
+    `array=(a b c d)`
 
 #### Software maintainance
 
