@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Angle Net</title>
+		<description>Software Developer</description>
+		<link>http://anglenet.github.io/</link>
+		<atom:link href="http://anglenet.github.io//feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>MapReduce Framework</title>
+				<description>&lt;h3 id=&quot;architecture&quot;&gt;*    Architecture&lt;/h3&gt;
+
+&lt;h3 id=&quot;&gt;*&lt;/h3&gt;
+</description>
+				<pubDate>Fri, 15 Apr 2016 00:00:00 +0800</pubDate>
+				<link>http://anglenet.github.io//2016/04/DS-MapReduce-1</link>
+				<guid isPermaLink="true">http://anglenet.github.io//2016/04/DS-MapReduce-1</guid>
+			</item>
+		
+			<item>
+				<title>Go Language Notes</title>
+				<description>&lt;h3 id=&quot;1-confusing-language-blocks&quot;&gt;1. Confusing Language blocks&lt;/h3&gt;
+
+&lt;h4 id=&quot;1-1-interface&quot;&gt;1.1 Interface&lt;/h4&gt;
+
+&lt;p&gt;Come soon&lt;/p&gt;
+
+&lt;h4 id=&quot;1-2-channel&quot;&gt;1.2 Channel&lt;/h4&gt;
+
+&lt;p&gt;Come soon&lt;/p&gt;
+
+&lt;h4 id=&quot;1-3-make-vs-new&quot;&gt;1.3 &lt;code&gt;make&lt;/code&gt; VS &lt;code&gt;new&lt;/code&gt;&lt;/h4&gt;
+
+&lt;p&gt;According to the &lt;a href=&quot;https://golang.org/doc/effective_go.html#allocation_new&quot;&gt;Official explanation&lt;/a&gt;, &lt;code&gt;new&lt;/code&gt; does not initialize the memory, only zeros it and return the address. &lt;code&gt;make(T, args)&lt;/code&gt; serves a purpose different from new(T). It creates slices, maps, and channels only, and it returns an initialized (not zeroed) value of type T (not *T). So what &lt;code&gt;make&lt;/code&gt; returns is usable immediately while what &lt;code&gt;new&lt;/code&gt; returns needs further initializing if zeroed content can not be used. &lt;/p&gt;
+
+&lt;h3 id=&quot;2-go-idioms&quot;&gt;2. Go idioms&lt;/h3&gt;
+
+&lt;h4 id=&quot;2-1-atomic-operation&quot;&gt;2.1 Atomic operation&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;go&quot;&gt;    countCh := make(chan int)
+    count := &amp;lt;- countCh
+    count++
+    countCh &amp;lt;- count
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;2-2-check-whether-the-channel-is-full&quot;&gt;2.2 Check whether the channel is full&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;go&quot;&gt;    if len(ch) == cap(ch){
+    }else{
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;useful-links&quot;&gt;Useful Links&lt;/h3&gt;
+
+&lt;p&gt;The official &lt;a href=&quot;https://golang.org/doc/effective_go.html&quot;&gt;Effective go&lt;/a&gt; is the best place to conquer the confusion of language specifics. &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;  &lt;a href=&quot;http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang&quot;&gt;50 shades of Go: traps and pitfalls&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;https://www.nada.kth.se/%7Esnilsson/concurrency/&quot;&gt;Concurrency&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;https://rogpeppe.wordpress.com/&quot;&gt;Rogpeppe Page&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Tue, 29 Mar 2016 00:00:00 +0800</pubDate>
+				<link>http://anglenet.github.io//2016/03/go-notes</link>
+				<guid isPermaLink="true">http://anglenet.github.io//2016/03/go-notes</guid>
+			</item>
+		
+			<item>
+				<title>RE<sub></sub>--Useful Links</title>
+				<description>&lt;h3 id=&quot;course-ware&quot;&gt;Course Ware&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;  &lt;a href=&quot;http://www.cs.fsu.edu/%7Eredwood/OffensiveSecurity/lectures.html&quot;&gt;Offensive Course&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Sun, 27 Mar 2016 00:00:00 +0800</pubDate>
+				<link>http://anglenet.github.io//2016/03/RE-2</link>
+				<guid isPermaLink="true">http://anglenet.github.io//2016/03/RE-2</guid>
+			</item>
+		
+			<item>
+				<title>OS<sub>2</sub>--Device Driver</title>
+				<description>&lt;h3 id=&quot;1-development-environment&quot;&gt;1. Development Environment&lt;/h3&gt;
+
+&lt;p&gt;Before coding, almost the most important thing is to get surpport code running. Sometimes it is not such easy to get everything right. This is the case. The trouble just comes. The following is my solution:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;  run &lt;code&gt;vagrant init ubuntu/trusty64 &amp;amp;&amp;amp; vagrant up --provider virtualbox&lt;/code&gt; to provide a clean environment for me. And &lt;a href=&quot;https://atlas.hashicorp.com/boxes/search&quot;&gt;Atlas&lt;/a&gt; is a nice place to search your appropriate boxes.&lt;/li&gt;
+&lt;li&gt;  run update.sh, it will update all surpport code with the official release.&lt;/li&gt;
+&lt;li&gt;  download &lt;a href=&quot;http://download.simics.net/pub/simics/4.8_fcd175/&quot;&gt;simics&lt;/a&gt;. The simics forum is a good place.&lt;/li&gt;
+&lt;li&gt;  run &lt;code&gt;apt-get install mtools&lt;/code&gt; to access utilities of MS-DOS on linux.&lt;/li&gt;
+&lt;li&gt;  Till now, we compiles the surpport code and generates the boot image.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Thu, 24 Mar 2016 00:00:00 +0800</pubDate>
+				<link>http://anglenet.github.io//2016/03/Operating-system-2</link>
+				<guid isPermaLink="true">http://anglenet.github.io//2016/03/Operating-system-2</guid>
+			</item>
+		
+			<item>
+				<title>DS<sub>1</sub>--Warm Up</title>
+				<description>&lt;h3 id=&quot;1-environment-setup&quot;&gt;1. Environment Setup&lt;/h3&gt;
+
+&lt;p&gt;You only need to install &lt;code&gt;go&lt;/code&gt; compiler. Just run the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apt-get install gccgo-5 to install gccgo 1.4.2.
+go test to run tests.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Official installation is recommended.&lt;/p&gt;
+
+&lt;h3 id=&quot;useful-links&quot;&gt;Useful links&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;  &lt;a href=&quot;http://www.cse.buffalo.edu/%7Estevko/courses/cse486/spring13/practice_problems.html&quot;&gt;Good Homeworks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;https://golang.org/doc/effective_go.html&quot;&gt;Effective Go&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Thu, 24 Mar 2016 00:00:00 +0800</pubDate>
+				<link>http://anglenet.github.io//2016/03/DS-1</link>
+				<guid isPermaLink="true">http://anglenet.github.io//2016/03/DS-1</guid>
+			</item>
+		
+			<item>
+				<title>RE<sub>1</sub>--Warm Up</title>
+				<description></description>
+				<pubDate>Sun, 20 Mar 2016 00:00:00 +0800</pubDate>
+				<link>http://anglenet.github.io//2016/03/SE-1</link>
+				<guid isPermaLink="true">http://anglenet.github.io//2016/03/SE-1</guid>
+			</item>
+		
+			<item>
+				<title>DB<sub>1</sub>--Warm Up</title>
+				<description>&lt;h3 id=&quot;1-course-notes&quot;&gt;1. Course Notes&lt;/h3&gt;
+
+&lt;h3 id=&quot;2-project-notes&quot;&gt;2. Project Notes&lt;/h3&gt;
+</description>
+				<pubDate>Sun, 20 Mar 2016 00:00:00 +0800</pubDate>
+				<link>http://anglenet.github.io//2016/03/DB-1</link>
+				<guid isPermaLink="true">http://anglenet.github.io//2016/03/DB-1</guid>
+			</item>
+		
+			<item>
+				<title>SE<sub>1</sub>--Warm Up</title>
+				<description></description>
+				<pubDate>Thu, 17 Mar 2016 00:00:00 +0800</pubDate>
+				<link>http://anglenet.github.io//2016/03/RE-1</link>
+				<guid isPermaLink="true">http://anglenet.github.io//2016/03/RE-1</guid>
+			</item>
+		
+			<item>
+				<title>AT&T Assembly Language</title>
+				<description>&lt;h4 id=&quot;introduction&quot;&gt;Introduction&lt;/h4&gt;
+
+&lt;p&gt;When I take the operating system course, there are many situations where I have to deal with via assembly language. Unforturenately the assembly world has been messed up. No standards. It becomes machine related, assembler related, system related. For the sake of using &lt;em&gt;gcc&lt;/em&gt; to compile my code, I write this note. Assembly language annoys me. &lt;/p&gt;
+
+&lt;h4 id=&quot;1-procedure&quot;&gt;1. Procedure&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;    void empty(int a, int b){
+    }
+    int main(){
+        empty(2, 3);
+        int c = 2;
+        int d = 3;
+        c = d;
+        d = c;
+        return 0;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When a program is loaded into memory, it starts from an &lt;em&gt;entry point&lt;/em&gt;  to execute. The &lt;em&gt;entry point&lt;/em&gt; is not &lt;code&gt;main()&lt;/code&gt;. When &lt;code&gt;main()&lt;/code&gt; is called. It will execute the following code until call &lt;code&gt;empty()&lt;/code&gt; :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    pushl   %ebp
+    movl    %esp,   %ebp
+
+    subl    $16,    %esp
+    movl    $3,     4(%esp)
+    movl    $2,     (%esp)
+    call    empty
+    movl    $2,     -4(%ebp)
+    movl    $3,     -8(%ebp)
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+				<pubDate>Sun, 03 Jan 2016 00:00:00 +0800</pubDate>
+				<link>http://anglenet.github.io//2016/01/Assembly-AT%26T</link>
+				<guid isPermaLink="true">http://anglenet.github.io//2016/01/Assembly-AT%26T</guid>
+			</item>
+		
+			<item>
+				<title>C Language Notes</title>
+				<description>&lt;h4 id=&quot;introduction&quot;&gt;Introduction&lt;/h4&gt;
+
+&lt;p&gt;Most of what I talk about in this notes are from some famous C programming books and my personal programming expeirence. C is an old programming language and provides the system programmer with the most freedom. You can do anything with it. &lt;/p&gt;
+
+&lt;h4 id=&quot;1-function-declaration&quot;&gt;1. Function declaration&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Call a funtion witch no arguments and site at address 0&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;(*(void(*) ()) 0) ();&lt;/code&gt; &lt;/p&gt;
+
+&lt;p&gt;Another declaration&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;typedef void (* funcptr)();
+(* (funcptr)0)();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The secret behind this statement is the priority of parentheses is higher than asterisk&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2-parallel-in-linux&quot;&gt;2. Parallel in linux&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Fork 3 processes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;#include &amp;lt;unistd.h&amp;gt;     //defines system calls and useful types.
+#include &amp;lt;sys/types.h&amp;gt;  //defines system call types, but more.
+
+pid_t pid = 0;
+int i = 0;
+for(i = 0; i &amp;lt; 3; i++){
+    pid = fork();
+    if(pid &amp;lt; 0){
+        //process creation error.
+    }else if(pid == 0){
+        //child process.
+        break;
+    }else{
+        //parent process.
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;3-header-files&quot;&gt;3 Header files&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;stdlib.h and malloc.h 
+stdlib.h is a standard C header that declares among other things the malloc(), calloc(), free() functions. This is the header you should include.
+malloc.h is a non-standard header, found on many systems where it often defines additional functions specific to the malloc implementation used by that platform.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;4-inline-vs-macro&quot;&gt;4. &lt;code&gt;Inline&lt;/code&gt; VS &lt;code&gt;Macro&lt;/code&gt;&lt;/h4&gt;
+
+&lt;p&gt;Preprocessor macros are just substitution patterns applied to your code. They can be used almost anywhere in your code because they are replaced with their expansions before any compilation starts.
+Inline functions are actual functions whose body is directly injected into their call site. They can only be used where a function call is appropriate.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;  Macros are not type safe, and can be expanded regardless of whether they are syntatically correct - the compile phase will report errors resulting from macro expansion problems.&lt;/li&gt;
+&lt;li&gt;  Macros are more flexible, in that they can expand other macros - whereas inline functions don&amp;#39;t necessarily do this.&lt;/li&gt;
+&lt;li&gt;  Macros can result in side effects because of their expansion, since the input expressions are copied wherever they appear in the pattern.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;5-pointer-to-functions&quot;&gt;5. Pointer to functions&lt;/h4&gt;
+
+&lt;p&gt;Pointer to functions if often used for callbacks. The address of function can be set directly, so it is possible to jump to an arbitrary address, it is useful in embedded-programming:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;    void (*func_ptr)(void) = (void (*)(void))0x12345678;
+    (*func_ptr)();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;However, it should be noted that this is not the same thing as unconditional jump, because return address is saved in the stack, maybe something else.&lt;/p&gt;
+
+&lt;h4 id=&quot;6-confusing-const-char-char-const-char-const&quot;&gt;6. Confusing &lt;code&gt;const char *&lt;/code&gt;, &lt;code&gt;char const *&lt;/code&gt;, &lt;code&gt;char * const&lt;/code&gt;&lt;/h4&gt;
+
+&lt;p&gt;We could read a definition from right to left. The meaning is much clearer. &lt;code&gt;const char *p&lt;/code&gt; says &lt;em&gt;p&lt;/em&gt; is a pointer to type &lt;code&gt;const char&lt;/code&gt;, that is the content of *&lt;em&gt;p&lt;/em&gt; can not be changed.&lt;/p&gt;
+
+&lt;h4 id=&quot;7-return-struct-from-function&quot;&gt;7. Return &lt;code&gt;struct&lt;/code&gt; from function.&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;Returning a newly create struct instance from a function is perfectly safe. It is just *Return by value*. That newly created struct is copied to the return value. And the newly created struct is vanished by calling its destructor. For the sake of optimization, the struct instance may acturally created in the calling context to avoid later copy. 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;c-stuff&quot;&gt;C++ Stuff&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Inheritance.&lt;/p&gt;
+
+&lt;p&gt;Decorated inheritance is just a way to narow the access scope of its parental members. That is &lt;code&gt;private&lt;/code&gt; inheritance narrows all its parental members to be &lt;code&gt;private&lt;/code&gt;. &lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Vitual functions.&lt;/p&gt;
+
+&lt;p&gt;Normal functions are just a static binding to its current class. While &lt;code&gt;virtual&lt;/code&gt; functions are somewhat dynamic bindings. The owned instance is dymically resolved.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;secrets&quot;&gt;Secrets.&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Here doc&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;char *string=&amp;quot;line1\n&amp;quot;
+    &amp;quot;line2\n&amp;quot;
+    &amp;quot;line3\n&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;sizeof()&lt;/code&gt; operator.&lt;/p&gt;
+
+&lt;p&gt;Usually, sizeof() is applied to integral types or to structures, but nevertheless it is possible to apply it to arrays as well. The result is caculated via Bytes.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Standard preprocessor&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;__FILE__&lt;/code&gt;, &lt;code&gt;__LINE__&lt;/code&gt;, &lt;code&gt;__FUNCTION__&lt;/code&gt; denotes current file name, current line number, current function name respectively.&lt;/p&gt;
+
+&lt;p&gt;Next: C-notes(page 25)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;others&quot;&gt;Others&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;  &lt;a href=&quot;https://gcc.gnu.org/onlinedocs/cpp/Macros.html&quot;&gt;Macros&lt;/a&gt; is always a confusing part of C.&lt;/li&gt;
+&lt;li&gt;  Recommending read lines:
+
+&lt;ul&gt;
+&lt;li&gt;Effective C++: Introduces some import ideas about the language.&lt;/li&gt;
+&lt;li&gt;Exceptional C++: Some advanced staffs.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Fri, 01 Jan 2016 00:00:00 +0800</pubDate>
+				<link>http://anglenet.github.io//2016/01/C-notes</link>
+				<guid isPermaLink="true">http://anglenet.github.io//2016/01/C-notes</guid>
+			</item>
+		
+	</channel>
+</rss>

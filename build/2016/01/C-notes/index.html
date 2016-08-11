@@ -1,0 +1,296 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Angle Net</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="http://anglenet.github.io//js/jquery.min.js"></script>
+  <script src="http://anglenet.github.io//js/bootstrap.min.js"></script>
+  <script src="http://anglenet.github.io//js/header.js"></script>
+  <script src="http://anglenet.github.io//js/toc.js"></script>
+  <link href="http://anglenet.github.io//css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://anglenet.github.io//css/theme.css" rel="stylesheet">
+  <link href="http://anglenet.github.io//css/syntax.css" rel="stylesheet">
+  <link href="http://anglenet.github.io//css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  
+
+  
+
+
+ <script type="text/javascript">
+  WebFontConfig = {
+    google: {
+      families: ['Ubuntu::latin']
+    }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="http://anglenet.github.io//">Angle Net</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="http://anglenet.github.io//">/home</a></li>
+          <li><a href="http://anglenet.github.io//archive.html">/archive</a></li>
+          <li><a href="http://anglenet.github.io//tags.html">/tags</a></li>
+          <li><a href="http://anglenet.github.io//about.html">/about</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<div class="wrapper">
+  <div class="content">
+    <div class="container container-center">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="article">
+            <div class="well">
+              <h1><a href="http://anglenet.github.io/2016/01/C-notes">C Language Notes</a></h1>
+              <div class="post-meta">
+                <div class="post-time">
+                  <i class="fa fa-calendar"></i>
+                  <time>01 Jan 2016</time>
+                </div>
+                <ul>
+                  
+                    <li><a href="http://anglenet.github.io/tag/Language">Language</a></li>
+                  
+                </ul>
+              </div>
+              <div class="post-content">
+                <div id="toc" class="toc"></div>
+                <h4 id="introduction">Introduction</h4>
+
+<p>Most of what I talk about in this notes are from some famous C programming books and my personal programming expeirence. C is an old programming language and provides the system programmer with the most freedom. You can do anything with it. </p>
+
+<h4 id="1-function-declaration">1. Function declaration</h4>
+
+<ul>
+<li><p>Call a funtion witch no arguments and site at address 0</p>
+
+<p><code>(*(void(*) ()) 0) ();</code> </p>
+
+<p>Another declaration</p>
+
+<pre><code class="c">typedef void (* funcptr)();
+(* (funcptr)0)();
+</code></pre>
+
+<p>The secret behind this statement is the priority of parentheses is higher than asterisk</p></li>
+</ul>
+
+<h4 id="2-parallel-in-linux">2. Parallel in linux</h4>
+
+<ul>
+<li><p>Fork 3 processes:</p>
+
+<pre><code class="c">#include &lt;unistd.h&gt;     //defines system calls and useful types.
+#include &lt;sys/types.h&gt;  //defines system call types, but more.
+
+pid_t pid = 0;
+int i = 0;
+for(i = 0; i &lt; 3; i++){
+    pid = fork();
+    if(pid &lt; 0){
+        //process creation error.
+    }else if(pid == 0){
+        //child process.
+        break;
+    }else{
+        //parent process.
+    }
+}
+</code></pre></li>
+</ul>
+
+<h4 id="3-header-files">3 Header files</h4>
+
+<ul>
+<li>stdlib.h and malloc.h 
+stdlib.h is a standard C header that declares among other things the malloc(), calloc(), free() functions. This is the header you should include.
+malloc.h is a non-standard header, found on many systems where it often defines additional functions specific to the malloc implementation used by that platform.</li>
+</ul>
+
+<h4 id="4-inline-vs-macro">4. <code>Inline</code> VS <code>Macro</code></h4>
+
+<p>Preprocessor macros are just substitution patterns applied to your code. They can be used almost anywhere in your code because they are replaced with their expansions before any compilation starts.
+Inline functions are actual functions whose body is directly injected into their call site. They can only be used where a function call is appropriate.</p>
+
+<ul>
+<li>  Macros are not type safe, and can be expanded regardless of whether they are syntatically correct - the compile phase will report errors resulting from macro expansion problems.</li>
+<li>  Macros are more flexible, in that they can expand other macros - whereas inline functions don&#39;t necessarily do this.</li>
+<li>  Macros can result in side effects because of their expansion, since the input expressions are copied wherever they appear in the pattern.</li>
+</ul>
+
+<h4 id="5-pointer-to-functions">5. Pointer to functions</h4>
+
+<p>Pointer to functions if often used for callbacks. The address of function can be set directly, so it is possible to jump to an arbitrary address, it is useful in embedded-programming:</p>
+
+<pre><code class="c">    void (*func_ptr)(void) = (void (*)(void))0x12345678;
+    (*func_ptr)();
+</code></pre>
+
+<p>However, it should be noted that this is not the same thing as unconditional jump, because return address is saved in the stack, maybe something else.</p>
+
+<h4 id="6-confusing-const-char-char-const-char-const">6. Confusing <code>const char *</code>, <code>char const *</code>, <code>char * const</code></h4>
+
+<p>We could read a definition from right to left. The meaning is much clearer. <code>const char *p</code> says <em>p</em> is a pointer to type <code>const char</code>, that is the content of *<em>p</em> can not be changed.</p>
+
+<h4 id="7-return-struct-from-function">7. Return <code>struct</code> from function.</h4>
+
+<pre><code>Returning a newly create struct instance from a function is perfectly safe. It is just *Return by value*. That newly created struct is copied to the return value. And the newly created struct is vanished by calling its destructor. For the sake of optimization, the struct instance may acturally created in the calling context to avoid later copy. 
+</code></pre>
+
+<h4 id="c-stuff">C++ Stuff</h4>
+
+<ul>
+<li><p>Inheritance.</p>
+
+<p>Decorated inheritance is just a way to narow the access scope of its parental members. That is <code>private</code> inheritance narrows all its parental members to be <code>private</code>. </p></li>
+<li><p>Vitual functions.</p>
+
+<p>Normal functions are just a static binding to its current class. While <code>virtual</code> functions are somewhat dynamic bindings. The owned instance is dymically resolved.</p></li>
+</ul>
+
+<h4 id="secrets">Secrets.</h4>
+
+<ul>
+<li><p>Here doc</p>
+
+<pre><code class="c">char *string=&quot;line1\n&quot;
+    &quot;line2\n&quot;
+    &quot;line3\n&quot;;
+</code></pre></li>
+<li><p><code>sizeof()</code> operator.</p>
+
+<p>Usually, sizeof() is applied to integral types or to structures, but nevertheless it is possible to apply it to arrays as well. The result is caculated via Bytes.</p></li>
+<li><p>Standard preprocessor</p>
+
+<p><code>__FILE__</code>, <code>__LINE__</code>, <code>__FUNCTION__</code> denotes current file name, current line number, current function name respectively.</p>
+
+<p>Next: C-notes(page 25)</p></li>
+</ul>
+
+<h4 id="others">Others</h4>
+
+<ul>
+<li>  <a href="https://gcc.gnu.org/onlinedocs/cpp/Macros.html">Macros</a> is always a confusing part of C.</li>
+<li>  Recommending read lines:
+
+<ul>
+<li>Effective C++: Introduces some import ideas about the language.</li>
+<li>Exceptional C++: Some advanced staffs.</li>
+</ul></li>
+</ul>
+
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 hidden-xs">
+          <div class="sidebar ">
+  <h1>Recent Posts</h1>
+  <ul>
+    
+    <li><a href="http://anglenet.github.io//2016/04/DS-MapReduce-1">MapReduce Framework</a></li>
+    
+    <li><a href="http://anglenet.github.io//2016/03/go-notes">Go Language Notes</a></li>
+    
+    <li><a href="http://anglenet.github.io//2016/03/RE-2">RE<sub></sub>--Useful Links</a></li>
+    
+    <li><a href="http://anglenet.github.io//2016/03/Operating-system-2">OS<sub>2</sub>--Device Driver</a></li>
+    
+    <li><a href="http://anglenet.github.io//2016/03/DS-1">DS<sub>1</sub>--Warm Up</a></li>
+    
+  </ul>
+</div>
+
+<div class="sidebar">
+  <h1>Tags</h1>
+  <ul>
+    
+      <li><a href="http://anglenet.github.io//tag/Operating-System">Operating-System</a></li>
+    
+      <li><a href="http://anglenet.github.io//tag/Unix">Unix</a></li>
+    
+      <li><a href="http://anglenet.github.io//tag/Hadoop">Hadoop</a></li>
+    
+      <li><a href="http://anglenet.github.io//tag/Language">Language</a></li>
+    
+      <li><a href="http://anglenet.github.io//tag/Software-Engineering">Software-Engineering</a></li>
+    
+      <li><a href="http://anglenet.github.io//tag/Database-System">Database-System</a></li>
+    
+      <li><a href="http://anglenet.github.io//tag/Reverse-Engineering">Reverse-Engineering</a></li>
+    
+      <li><a href="http://anglenet.github.io//tag/Distributed-System">Distributed-System</a></li>
+    
+  </ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+    
+
+  </div>
+      <footer class="footer-distributed">
+      <div class="container">
+        <div class="footer">
+          <p>Angle Net &copy; 2015</p>
+          <h6>Follow me</h6>
+
+<ul class="social-media">
+
+    
+    <li>
+        <a title="AngleNet on Github"
+            href="https://github.com/AngleNet"
+            target="_blank"><i class="fa fa-github fa-2x"></i></a>
+    </li>
+    
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+
+</ul>
+
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+</div>
