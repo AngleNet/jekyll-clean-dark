@@ -10,7 +10,7 @@ rm -rf _site
 jekyll build
 cd ../AngleNet.github.io
 git rm -rf *
-mv ../blog/_site/* .
+mv ../blog/build/* .
 git add -A
 git commit -m "Commit a new blog"
 git push
