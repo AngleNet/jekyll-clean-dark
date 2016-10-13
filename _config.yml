@@ -4,11 +4,11 @@ name: Angle Net
 description: Software Developer
 
 # Url is currently only used only for the RSS feed in feed.xml
-url: http://anglenet.github.io/
+url: http://anglenet.github.io
 #url: http://localhost:4000
 
 # For a project page here should be a project name. Otherwise (for user's/organizaion's page leave it empty)
-baseurl: ''
+baseurl: '/'
 
 social:
   github: AngleNet 
@@ -28,7 +28,7 @@ yandex_metrika:
 # setting below must also be true. Individual posts can override 'comments' to
 # disable on a post-by-post basis
 disqus: AngleNet 
-comments: true
+comments: false 
 
 permalink: /:year/:month/:title
 
