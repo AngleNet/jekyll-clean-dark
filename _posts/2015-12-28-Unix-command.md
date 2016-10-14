@@ -141,7 +141,9 @@ Sometimes when we want to debug a java program with standard input data, we get 
 #### MathJax
 
 I write this blog using markdown along with Mathjax. It works quite well. Good links about how to make that happen:
+
 * [Mathjax and Latex Overview](http://mlworks.cn/posts/introduction-to-mathjax-and-latex-expression/)
+
 * [Patch Jekyll with Mathjax](http://gastonsanchez.com/opinion/2014/02/16/Mathjax-with-jekyll)
 	
 
