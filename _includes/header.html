@@ -16,9 +16,12 @@
   <script src="{{site.baseurl | prepend:site.url}}js/bootstrap.min.js"></script>
   <script src="{{site.baseurl | prepend:site.url}}js/header.js"></script>
   <script src="{{site.baseurl | prepend:site.url}}js/toc.js"></script>
-  <script type="text/javascript"
-    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+            });
   </script>
+  <script type="text/javascript"src="{{site.baseurl | prepend:site.url}}js/MathJax.js"></script>
   <!-- Load KaTeX 
   <script src="{{site.baseurl | prepend:site.url}}js/katex.min.js"></script>
   -->

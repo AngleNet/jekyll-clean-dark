@@ -6,7 +6,7 @@ tags: Operating-System
 description: This series of blogs are class notes when I take the <b>CMU</b> <a href=https://www.cs.cmu.edu/~410/schedule.html>Operating system course</a>
 ---
 
-###1. Development Environment
+### 1. Development Environment
 
 Before coding, almost the most important thing is to get surpport code running. Sometimes it is not such easy to get everything right. This is the case. The trouble just comes. The following is my solution:
 
