@@ -45,4 +45,6 @@ kramdown:
 
 exclude: ['README.md', 'LICENSE']
 gems: ['jekyll-paginate', 'kramdown']
+: http://anglenet.github.io
+: http://anglenet.github.io
 url: http://localhost:7777
