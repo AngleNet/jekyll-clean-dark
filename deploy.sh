@@ -3,9 +3,6 @@
 #cp -rf ./_site/* ../AngleNet.github.io/
 #cd ../AngleNet.github.io
 blog=/home/anglenet/repo/anglenet.github.io
-git add -A
-git commit -m "Commit new blog"
-git push
 
 rm -rf _site
 jekyll build
